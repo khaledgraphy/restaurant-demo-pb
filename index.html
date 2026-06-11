@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paderborner Brauhaus – Restaurant & größter Biergarten der Innenstadt</title>
+<meta name="description" content="Das Paderborner Brauhaus an der Pader: deutsche Küche, frisch gezapftes Paderborner Pilger und der größte Biergarten der Innenstadt mit über 350 Plätzen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1f3527;
+  --green-deep:#152619;
+  --copper:#b06f2b;
+  --copper-dark:#8a541d;
+  --amber:#e0a042;
+  --paper:#f4eddc;
+  --paper-dark:#ece2c9;
+  --ink:#251f16;
+  --line:rgba(37,31,22,.18);
+  --radius:4px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lora',Georgia,serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--copper-dark)}
+h1,h2,h3{font-family:'Yeseva One',serif;font-weight:400;line-height:1.15}
+.eyebrow{font-family:'Oswald',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);display:flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--copper)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.btn{display:inline-block;font-family:'Oswald',sans-serif;font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;padding:.95rem 1.9rem;border-radius:var(--radius);text-decoration:none;transition:transform .15s ease,background .2s ease;border:1.5px solid transparent}
+.btn:active{transform:scale(.97)}
+.btn-amber{background:var(--amber);color:var(--green-deep);border-color:var(--amber)}
+.btn-amber:hover{background:#e9af58}
+.btn-ghost{color:var(--paper);border-color:rgba(244,237,220,.55)}
+.btn-ghost:hover{border-color:var(--paper);background:rgba(244,237,220,.08)}
+.btn-green{background:var(--green);color:var(--paper);border-color:var(--green)}
+.btn-green:hover{background:var(--green-deep)}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(21,38,25,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(224,160,66,.25)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:.8rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:'Yeseva One',serif;color:var(--paper);text-decoration:none;font-size:1.15rem;letter-spacing:.02em}
+.brand span{color:var(--amber)}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);text-decoration:none;opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--amber)}
+.nav-cta{font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;background:var(--amber);color:var(--green-deep);text-decoration:none;padding:.55rem 1.1rem;border-radius:var(--radius);white-space:nowrap}
+.menu-toggle{display:none;background:none;border:1.5px solid rgba(244,237,220,.5);color:var(--paper);font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem .9rem;border-radius:var(--radius);cursor:pointer}
+
+/* ── Hero ── */
+header{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;background:
+  radial-gradient(1100px 600px at 80% -10%, rgba(224,160,66,.18), transparent 60%),
+  radial-gradient(900px 700px at 10% 110%, rgba(176,111,43,.22), transparent 55%),
+  linear-gradient(160deg,#1f3527 0%,#152619 70%);
+  color:var(--paper);overflow:hidden}
+header::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23e0a042' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M60 18c-8 8-8 20 0 28 8-8 8-20 0-28z'/%3E%3Cpath d='M60 46v22M48 60c4 6 8 8 12 8M72 60c-4 6-8 8-12 8'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:7rem 1.25rem 3rem;width:100%}
+.hero-eyebrow{font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
+.hero-inner h1{font-size:clamp(2.6rem,7vw,4.6rem);max-width:13ch;margin-bottom:1.3rem}
+.hero-inner h1 em{font-style:normal;color:var(--amber)}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.2rem);max-width:46ch;opacity:.92;margin-bottom:2.2rem}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap}
+/* Enamel-style hours sign */
+.sign{margin-top:3.2rem;display:inline-flex;flex-wrap:wrap;gap:0;border:2px solid var(--amber);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 5px rgba(224,160,66,.12)}
+.sign div{padding:.85rem 1.4rem;font-family:'Oswald',sans-serif;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.sign .sign-label{background:var(--amber);color:var(--green-deep);font-weight:600}
+.sign .sign-val{border-left:1px solid rgba(224,160,66,.4)}
+.scroll-hint{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);font-family:'Oswald',sans-serif;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,237,220,.55);z-index:2}
+
+/* ── Info strip ── */
+.strip{background:var(--copper);color:#fdf7ea;padding:1rem 0}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2.4rem;justify-content:center;font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.strip a{color:#fdf7ea;text-decoration:none}
+
+/* ── About ── */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.about-grid h2{font-size:clamp(1.9rem,4vw,2.7rem);margin:1rem 0 1.2rem}
+.about-grid p{margin-bottom:1rem;max-width:55ch}
+.photo{border-radius:var(--radius);aspect-ratio:4/5;background:
+  linear-gradient(170deg,rgba(31,53,39,.85),rgba(21,38,25,.95)),
+  radial-gradient(400px 300px at 30% 20%, rgba(224,160,66,.5), transparent);
+  display:flex;align-items:flex-end;justify-content:flex-start;padding:1.2rem;color:rgba(244,237,220,.75);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:2rem}
+.stats div{background:var(--paper);padding:1.1rem .8rem;text-align:center}
+.stats b{display:block;font-family:'Yeseva One',serif;font-weight:400;font-size:1.5rem;color:var(--copper-dark)}
+.stats span{font-family:'Oswald',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* ── Speisekarte (signature) ── */
+#speisekarte{background:var(--paper-dark);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.menu-head{text-align:center;max-width:560px;margin:0 auto 3rem}
+.menu-head .eyebrow{justify-content:center}
+.menu-head .eyebrow::after{content:"";width:34px;height:2px;background:var(--copper)}
+.menu-head h2{font-size:clamp(2rem,4.5vw,2.8rem);margin:.9rem 0 .7rem}
+.menu-card{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.4rem,4vw,3rem);box-shadow:0 14px 40px rgba(37,31,22,.08)}
+.menu-section{margin-bottom:2.4rem}
+.menu-section:last-child{margin-bottom:0}
+.menu-section h3{font-size:1.25rem;color:var(--copper-dark);display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}
+.menu-section h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.dish{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1.1rem}
+.dish-name{font-weight:600;white-space:nowrap}
+.dish-dots{flex:1;border-bottom:2px dotted rgba(176,111,43,.55);transform:translateY(-4px);min-width:24px}
+.dish-price{font-family:'Oswald',sans-serif;font-weight:500;color:var(--copper-dark);white-space:nowrap}
+.dish-desc{font-size:.92rem;opacity:.78;margin:-.7rem 0 1.1rem;font-style:italic;max-width:52ch}
+.tag{display:inline-block;font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;background:var(--green);color:var(--paper);border-radius:2px;padding:.15rem .45rem;transform:translateY(-2px);margin-left:.4rem}
+.menu-note{text-align:center;margin-top:2.2rem;font-size:.9rem;opacity:.75;font-style:italic}
+
+/* ── Saison / Aktionen ── */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;display:flex;flex-direction:column;gap:.6rem}
+.card h3{font-size:1.2rem;color:var(--green)}
+.card p{font-size:.95rem;flex:1}
+.card a{font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--copper-dark)}
+.card a:hover{color:var(--copper)}
+
+/* ── Reservieren ── */
+#reservieren{background:
+  radial-gradient(800px 400px at 85% 0%, rgba(224,160,66,.16), transparent 60%),
+  linear-gradient(150deg,#1f3527,#152619);
+  color:var(--paper);text-align:center}
+#reservieren h2{font-size:clamp(2rem,4.5vw,2.8rem);margin:.9rem 0 1rem}
+#reservieren p{max-width:48ch;margin:0 auto 2rem;opacity:.9}
+#reservieren .eyebrow{justify-content:center;color:var(--amber)}
+#reservieren .eyebrow::before,#reservieren .eyebrow::after{background:var(--amber)}
+#reservieren .eyebrow::after{content:"";width:34px;height:2px}
+.res-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.res-phone{margin-top:1.6rem;font-family:'Oswald',sans-serif;letter-spacing:.1em;font-size:.9rem}
+.res-phone a{color:var(--amber);text-decoration:none;font-size:1.3rem;display:block;margin-top:.2rem}
+
+/* ── Kontakt ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-grid h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:1rem 0 1.4rem}
+.contact-list{list-style:none}
+.contact-list li{padding:1rem 0;border-bottom:1px solid var(--line);display:flex;gap:1rem;align-items:baseline}
+.contact-list b{font-family:'Oswald',sans-serif;font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--copper-dark);min-width:110px}
+.map-ph{aspect-ratio:4/3;border-radius:var(--radius);border:1px solid var(--line);background:
+  repeating-linear-gradient(45deg,rgba(31,53,39,.06) 0 10px,transparent 10px 20px),var(--paper-dark);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.6rem;text-align:center;padding:1rem}
+.map-ph span{font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+
+/* ── Footer ── */
+footer{background:var(--green-deep);color:rgba(244,237,220,.75);padding:2.2rem 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:space-between;align-items:center}
+footer a{color:rgba(244,237,220,.85);text-decoration:none;margin-right:1.4rem}
+footer a:hover{color:var(--amber)}
+
+/* ── Reveal animation ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ── Responsive ── */
+@media (max-width:860px){
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
+  .cards{grid-template-columns:1fr}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--green-deep);flex-direction:column;gap:0;padding:.5rem 0;border-bottom:1px solid rgba(224,160,66,.25)}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:.85rem 1.25rem}
+  .menu-toggle{display:block}
+  .sign{flex-direction:column}
+  .sign .sign-val{border-left:none;border-top:1px solid rgba(224,160,66,.4)}
+  section{padding:3.2rem 0}
+  .dish-name{white-space:normal}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Paderborner <span>Brauhaus</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#speisekarte">Speisekarte</a></li>
+      <li><a href="#aktionen">Saison & Feiern</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;gap:.7rem;align-items:center">
+      <a class="nav-cta" href="#reservieren">Tisch reservieren</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menü</button>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Seit Generationen an der Pader · Kisau 2, Paderborn</p>
+    <h1>Der größte Biergarten <em>der Innenstadt.</em></h1>
+    <p class="hero-sub">Deutsche Küche, frisch gezapftes Paderborner Pilger und über 350 Plätze unter altem Baumbestand – direkt an der Pader, mitten in Paderborn.</p>
+    <div class="hero-actions">
+      <a class="btn btn-amber" href="#reservieren">Tisch reservieren</a>
+      <a class="btn btn-ghost" href="#speisekarte">Zur Speisekarte</a>
+    </div>
+    <div class="sign" role="group" aria-label="Öffnungszeiten">
+      <div class="sign-label">Öffnungszeiten</div>
+      <div class="sign-val">Mo – Fr ab 17:00 Uhr</div>
+      <div class="sign-val">Sa, So & Feiertage ab 11:30 Uhr</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scrollen</div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div>☏ <a href="tel:+495251282554">05251 / 282 554</a></div>
+    <div>Kisau 2 · 33098 Paderborn</div>
+    <div>Küche täglich geöffnet</div>
+  </div>
+</div>
+
+<section id="ueber-uns">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <p class="eyebrow">Über uns</p>
+      <h2>Bodenständige Küche. Frisch gezapft. Mitten an der Pader.</h2>
+      <p>Nicht weit vom Paderquellgebiet lockt das Paderborner Brauhaus mit dem größten Biergarten der Innenstadt. Neben deutschen Speisen und frisch gezapftem Paderborner Pilger bieten wir Räume für größere Gesellschaften.</p>
+      <p>Ob runder Geburtstag, Firmenfeier oder Familienfest: Reservieren Sie einfach und stressfrei – wir kümmern uns um den Rest.</p>
+      <div class="stats">
+        <div><b>350+</b><span>Plätze im Biergarten</span></div>
+        <div><b>★ 4,4</b><span>Google-Bewertung</span></div>
+        <div><b>Nr. 15</b><span>von 163 in Paderborn</span></div>
+      </div>
+    </div>
+    <div class="photo reveal" role="img" aria-label="Platzhalter für ein Foto des Biergartens">Foto: Biergarten an der Pader</div>
+  </div>
+</section>
+
+<section id="speisekarte">
+  <div class="wrap">
+    <div class="menu-head reveal">
+      <p class="eyebrow">Speisekarte</p>
+      <h2>Aus Küche & Zapfhahn</h2>
+      <p>Eine Auswahl unserer Klassiker – die vollständige Karte erhalten Sie im Haus.</p>
+    </div>
+    <div class="menu-card reveal">
+      <div class="menu-section">
+        <h3>Vorspeisen & Suppen</h3>
+        <div class="dish"><span class="dish-name">Paderborner Kartoffelsuppe</span><span class="dish-dots"></span><span class="dish-price">7,50 €</span></div>
+        <p class="dish-desc">Herzhaft, mit Speck und frischem Schnittlauch</p>
+        <div class="dish"><span class="dish-name">Bruschetta</span><span class="dish-dots"></span><span class="dish-price">8,90 €</span></div>
+        <p class="dish-desc">Geröstetes Brot mit Tomaten, Knoblauch und Basilikum</p>
+        <div class="dish"><span class="dish-name">Gratinierter Ziegenkäse <span class="tag">Vegetarisch</span></span><span class="dish-dots"></span><span class="dish-price">13,90 €</span></div>
+        <p class="dish-desc">Auf Wildkräutersalat mit Himbeerdressing und Honig</p>
+      </div>
+      <div class="menu-section">
+        <h3>Brauhaus-Klassiker</h3>
+        <div class="dish"><span class="dish-name">Brauhausteller</span><span class="dish-dots"></span><span class="dish-price">19,90 €</span></div>
+        <p class="dish-desc">Deftige Hausplatte mit Bratkartoffeln und Krautsalat</p>
+        <div class="dish"><span class="dish-name">Schnitzel „Wiener Art“</span><span class="dish-dots"></span><span class="dish-price">17,90 €</span></div>
+        <p class="dish-desc">Mit Pommes frites oder Bratkartoffeln und Salatgarnitur</p>
+        <div class="dish"><span class="dish-name">Lady-Teller</span><span class="dish-dots"></span><span class="dish-price">18,90 €</span></div>
+        <p class="dish-desc">Hähnchenbrust mit Pfirsich und Käse überbacken, dazu hausgemachte Rösti</p>
+      </div>
+      <div class="menu-section">
+        <h3>Saisonal <span class="tag" style="margin-left:0">Spargelzeit</span></h3>
+        <div class="dish"><span class="dish-name">Frischer Spargel mit Sauce Hollandaise</span><span class="dish-dots"></span><span class="dish-price">ab 16,90 €</span></div>
+        <p class="dish-desc">Wahlweise mit Schinken, Schnitzel oder neuen Kartoffeln</p>
+      </div>
+      <div class="menu-section">
+        <h3>Vom Zapfhahn</h3>
+        <div class="dish"><span class="dish-name">Paderborner Pilger 0,3&nbsp;l</span><span class="dish-dots"></span><span class="dish-price">3,40 €</span></div>
+        <div class="dish"><span class="dish-name">Paderborner Pilger 0,5&nbsp;l</span><span class="dish-dots"></span><span class="dish-price">4,90 €</span></div>
+      </div>
+      <p class="menu-note">Alle Preise sind Beispielwerte für diese Demo-Seite.</p>
+    </div>
+  </div>
+</section>
+
+<section id="aktionen">
+  <div class="wrap">
+    <p class="eyebrow reveal">Saison & Feiern</p>
+    <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,2.6rem);margin-top:1rem">Das ganze Jahr ein Grund zu kommen</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Feiern & Gesellschaften</h3>
+        <p>Eigene Räume für Geburtstage, Jubiläen und Firmenfeiern. Wir planen mit Ihnen – Sie feiern entspannt.</p>
+        <a href="#reservieren">Anfrage stellen →</a>
+      </div>
+      <div class="card reveal">
+        <h3>Saisonkarten</h3>
+        <p>Spargel im Frühjahr, Gans und Grünkohl im Winter: unsere Küche folgt den Jahreszeiten.</p>
+        <a href="#speisekarte">Zur Karte →</a>
+      </div>
+      <div class="card reveal">
+        <h3>Gutscheine</h3>
+        <p>Verschenken Sie einen Abend im Brauhaus. Gutscheine erhalten Sie bei uns im Haus oder bequem per Post.</p>
+        <a href="mailto:info@bono-gastronomie.de">Gutschein bestellen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reservieren">
+  <div class="wrap reveal">
+    <p class="eyebrow">Reservieren</p>
+    <h2>Ihr Tisch wartet schon.</h2>
+    <p>Online in unter einer Minute reservieren – oder rufen Sie uns einfach an. Für Gruppen ab 10 Personen beraten wir Sie gerne persönlich.</p>
+    <div class="res-actions">
+      <a class="btn btn-amber" href="https://www.thefork.de/restaurant/paderborner-brauhaus-r604553" target="_blank" rel="noopener">Online reservieren</a>
+      <a class="btn btn-ghost" href="tel:+495251282554">Anrufen</a>
+    </div>
+    <p class="res-phone">Telefonisch erreichbar<a href="tel:+495251282554">05251 / 282 554</a></p>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Kontakt</p>
+      <h2>So finden Sie uns</h2>
+      <ul class="contact-list">
+        <li><b>Adresse</b><span>Kisau 2, 33098 Paderborn</span></li>
+        <li><b>Telefon</b><a href="tel:+495251282554">05251 / 282 554</a></li>
+        <li><b>E-Mail</b><a href="mailto:info@bono-gastronomie.de">info@bono-gastronomie.de</a></li>
+        <li><b>Zeiten</b><span>Mo–Fr ab 17:00 · Sa, So & Feiertage ab 11:30</span></li>
+        <li><b>Anfahrt</b><span>Parkhaus Spitalmauer (120&nbsp;m) · Bus bis Kasseler Tor</span></li>
+      </ul>
+    </div>
+    <div class="map-ph reveal">
+      <span>Google Maps</span>
+      <p style="font-size:.9rem;opacity:.7;max-width:30ch">Interaktive Karte wird hier eingebunden (DSGVO-konform, Zwei-Klick-Lösung)</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Paderborner Brauhaus · Bono Gastronomie</div>
+    <div>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="https://www.facebook.com/paderborner.brauhaus/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle=document.getElementById('menuToggle');
+const links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{
+  const open=links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded',open);
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
+}));
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
